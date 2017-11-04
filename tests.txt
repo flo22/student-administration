@@ -1,0 +1,86 @@
+praktomat> stud florian 11111
+Error! No tutor created.
+praktomat> tut ingo
+praktomat> stud florian 11111
+praktomat> tut berta
+praktomat> stud ingo ingo
+Error! Matriculation number must be a five digit positiv number.
+praktomat> stud ingo 22222
+praktomat> tut ingo
+praktomat> stud bertram 33333
+praktomat> list-students
+(11111,florian): ingo
+(22222,ingo): berta
+(33333,bertram): ingo
+praktomat> task Aufgabe_1
+task id(1)
+praktomat> task Aufgabe_2
+task id(2)
+praktomat> submit 3 11111 ok
+Error! Task does not exist.
+praktomat> submit 1 11111 ok
+praktomat> submit 1 22222 schwer
+praktomat> subit 1 33333 easy
+Error! Unknown command: 'subit'
+praktomat> submit 1 33333 easy
+praktomat> list-solutions 1
+(11111,florian): ok
+(22222,ingo): schwer
+(33333,bertram): easy
+praktomat> review 1 11111 4 ok
+ingo reviewed (11111,florian) with grade 4
+praktomat> review 1 22222 2 gut
+berta reviewed (22222,ingo) with grade 2
+praktomat> review 1 33333 1 super
+ingo reviewed (33333,bertram) with grade 1
+praktomat> results
+task id(1): Aufgabe_1
+11111: 4
+22222: 2
+33333: 1
+task id(2): Aufgabe_2
+praktomat> summary-student
+(33333,bertram): 1.00
+(22222,ingo): 2.00
+(11111,florian): 4.00
+praktomat> submit 2 11111 ok
+praktomat> submit 2 11111 ohnein
+Error! A solution is already given.
+praktomat> submit 2 22222 geht
+praktomat> submit 2 33333 easy
+praktomat> summary-tutor
+berta: 1 students, 1 missing review(s), average grade: 2.00
+ingo: 2 students, 2 missing review(s), average grade: 2.50
+praktomat> summary-task
+task id(1): Aufgabe_1
+submitted: 3
+reviewed: 3
+average grade: 2.33
+distribution: 1x1, 1x2, 0x3, 1x4, 0x5
+task id(2): Aufgabe_2
+submitted: 3
+reviewed: 0
+average grade: -
+distribution: 0x1, 0x2, 0x3, 0x4, 0x5
+praktomat> review 2 11111 1 super
+ingo reviewed (11111,florian) with grade 1
+praktomat> review 2 22222 2 geht
+berta reviewed (22222,ingo) with grade 2
+praktomat> review 2 33333 4 nice
+ingo reviewed (33333,bertram) with grade 4
+praktomat> summary-student
+(22222,ingo): 2.00
+(11111,florian): 2.50
+(33333,bertram): 2.50
+praktomat> results
+task id(1): Aufgabe_1
+11111: 4
+22222: 2
+33333: 1
+task id(2): Aufgabe_2
+11111: 1
+22222: 2
+33333: 4
+praktomat> reset
+praktomat> list-students
+praktomat> quit
